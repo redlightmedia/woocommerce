@@ -140,6 +140,8 @@ if ( ! comments_open() ) {
 		<?php else : ?>
 			<p class="woocommerce-verification-required"><?php esc_html_e( 'Only logged in customers who have purchased this product may leave a review.', 'woocommerce' ); ?></p>
 		<?php endif; ?>
+	<?php else : ?>
+			<?php do_action( 'woocommerce_review_rating_form_disabled', $product->get_id() ); ?>
 	<?php endif; ?>
 	<div class="clear"></div>
 </div>
