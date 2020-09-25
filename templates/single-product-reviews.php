@@ -64,7 +64,7 @@ if ( ! comments_open() ) {
 			<p class="woocommerce-noreviews"><?php esc_html_e( 'There are no reviews yet.', 'woocommerce' ); ?></p>
 		<?php endif; ?>
 	</div>
-	<?php if ( apply_filters( 'woocommerce_display_review_rating_form', true ) ) : ?>
+	<?php if ( apply_filters( 'woocommerce_display_review_rating_form', true, $product->get_id() ) ) : ?>
 		<?php if ( get_option( 'woocommerce_review_rating_verification_required' ) === 'no' || wc_customer_bought_product( '', get_current_user_id(), $product->get_id() ) ) : ?>
 			<div id="review_form_wrapper">
 				<div id="review_form">
